@@ -1,16 +1,16 @@
-const express = require('express');
+const express = require ('express');
 const app = express();
-const port = 8285
+const port = 8280
 const path = require('path')
 const hbs = require('hbs');
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'hbs/public')));
 
-app.set('views', path.join(__dirname+ '/public/views'));
+app.set('views', path.join(__dirname+ '/hbs/public/views'));
 app.set('view engine', 'hbs');
 
-hbs.registerPartials(__dirname + '/public/partials');
+hbs.registerPartials(__dirname + '/hbs/public/views/partials');
 
 app.get('/', (req, res) =>{
     res.render('disponibilidad')
